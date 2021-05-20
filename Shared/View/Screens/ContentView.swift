@@ -15,7 +15,7 @@ struct ContentView: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
-
+    
     var body: some View {
         List {
             ForEach(items) { item in
@@ -30,6 +30,14 @@ struct ContentView: View {
 
             Button(action: addItem) {
                 Label("Add Item", systemImage: "plus")
+            }
+        }
+        NavigationView {
+            VStack{
+                NavigationLink(
+                    destination: testServiceView()) {
+                    Text("Submit")
+                }.navigationBarTitle("FirstView", displayMode: .inline)
             }
         }
     }
@@ -63,6 +71,16 @@ struct ContentView: View {
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
         }
+    }
+}
+
+struct testServiceView: View {
+    
+    @Environment(\.interactor) var interactor: ChatInteractor
+        
+    var body: some View {
+        Text("Main Title")
+        let _ = interactor.loadMessages()
     }
 }
 

@@ -23,8 +23,13 @@ enum MessageType: String, Codable, Equatable {
 
 struct Message: Codable {
     let type: MessageType
-    let text: String?
+    let text: String
     let id: Int
     let image: Data?
+    let nextMessagesId: [Int]?
     let isLastMessage: Bool
+}
+
+struct Messages: Codable {
+    let messages: [Message]
 }

@@ -1,0 +1,164 @@
+{
+	"messages": [
+		{
+			"type":	"character",	
+			"text": "Olá, como vai?",
+			"id": 1,
+			"image": null,
+            "nextMessagesId": [21,22,23],
+			"isLastMessage": true 
+		},
+        {
+			"type":	"character",	
+			"text": "Ah, desculpa não me apresentar. Sou a Kitsu mas me chame de Chapeuzinho.",
+			"id": 31,
+			"image": null,
+            "nextMessagesId": [41,42,43],
+			"isLastMessage": true 
+		},
+        {
+			"type":	"character",	
+			"text": "Haha, pois é né.",
+			"id": 52,
+			"image": null,
+            "nextMessagesId": [61,62],
+			"isLastMessage": true 
+		},
+        {
+			"type":	"character",	
+			"text": "Verdade, tem razão.",
+			"id": 51,
+			"image": null,
+            "nextMessagesId": [61,62],
+			"isLastMessage": true 
+		},
+        {
+			"type":	"character",	
+			"text": "Ah, obrigada, eu acho.",
+			"id": 53,
+			"image": null,
+            "nextMessagesId": [61,62],
+			"isLastMessage": true 
+		},
+        {
+			"type":	"character",	
+			"text": "Olha só, que bom, que bom...",
+			"id": 32,
+			"image": null,
+            "nextMessagesId": [44,45,46],
+			"isLastMessage": true 
+		},
+        {
+			"type":	"character",	
+			"text": "Não lembra mais de mim?",
+			"id": 541,
+			"image": null,
+            "nextMessagesId": [542],
+			"isLastMessage": false 
+		},
+        {
+			"type":	"character",	
+			"text": "haha Tô zoando, acho que nunca nos conhecemos antes, me chame de Chapeuzinho.",
+			"id": 542,
+			"image": null,
+            "nextMessagesId": [61,62],
+			"isLastMessage": true 
+		},
+        {
+			"type":	"character",	
+			"text": "Só fiquei curiosa de ver seu número.",
+			"id": 33,
+			"image": null,
+            "nextMessagesId": [61,62],
+			"isLastMessage": true 
+		},
+        {
+			"type":	"reader",	
+			"text": "Quem é você?",
+			"id": 21,
+			"image": null,
+            "nextMessagesId": [31],
+			"isLastMessage": true 
+		},
+        {
+			"type":	"reader",	
+			"text": "Vou bem",
+			"id": 22,
+			"image": null,
+            "nextMessagesId": [32],
+			"isLastMessage": true 
+		},
+        {
+			"type":	"reader",	
+			"text": "Por quê quer saber?",
+			"id": 23,
+			"image": null,
+            "nextMessagesId": [33],
+			"isLastMessage": true 
+		},
+        {
+			"type":	"reader",	
+			"text": "Melhor Chapeuzinho mesmo kkkkk",
+			"id": 41,
+			"image": null,
+            "nextMessagesId": [51],
+			"isLastMessage": true 
+		},
+        {
+			"type":	"reader",	
+			"text": "Nome estranho, mas quem não tem né haha",
+			"id": 42,
+			"image": null,
+            "nextMessagesId": [52],
+			"isLastMessage": true 
+		},
+        {
+			"type":	"reader",	
+			"text": "Belo nome!",
+			"id": 43,
+			"image": null,
+            "nextMessagesId": [53],
+			"isLastMessage": true 
+		},
+        {
+			"type":	"reader",	
+			"text": "Mas quem é você?",
+			"id": 44,
+			"image": null,
+            "nextMessagesId": [541],
+			"isLastMessage": true 
+		},
+        {
+			"type":	"reader",	
+			"text": "Verdade...",
+			"id": 45,
+			"image": null,
+            "nextMessagesId": [541],
+			"isLastMessage": true 
+		},
+        {
+			"type":	"reader",	
+			"text": "Eu te conheço?",
+			"id": 46,
+			"image": null,
+            "nextMessagesId": [541],
+			"isLastMessage": true 
+		},
+        {
+			"type":	"reader",	
+			"text": "Quem bom que conseguiu meu número.",
+			"id": 61,
+			"image": null,
+            "nextMessagesId": null,
+			"isLastMessage": true 
+		},
+        {
+			"type":	"reader",	
+			"text": "E como você conseguiu meu número?",
+			"id": 62,
+			"image": null,
+            "nextMessagesId": null,
+			"isLastMessage": true 
+		}
+	] 
+}
