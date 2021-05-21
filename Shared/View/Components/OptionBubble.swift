@@ -16,6 +16,7 @@ struct OptionBubble: View {
         if !isSelected {
             VStack {
                 Text(option.text)
+                    .frame(width: 750)
             }
             .padding()
             .overlay(
@@ -25,9 +26,11 @@ struct OptionBubble: View {
             .background(Color(0xF3EDE4))
             .cornerRadius(6)
             .multilineTextAlignment(.center)
+            
         } else {
             VStack {
                 Text(option.text)
+                    .frame(width: 750)
             }
             .padding()
             .overlay(
@@ -37,6 +40,7 @@ struct OptionBubble: View {
             .background(Color(0xFEEED7))
             .cornerRadius(6)
             .multilineTextAlignment(.center)
+            
         }
     }
     

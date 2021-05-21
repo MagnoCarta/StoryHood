@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct AnswerInteractor {
-    //Função de enviar resposta
-    //Função para receber respostas
-    //Função para mudar estado das opções
+    func saveUserMessage(option: String) {
+        // salva no CoreData atualiza view de Messages
+    }
+    
+    //Função para iniciar Choices e habilitar
 }
