@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import CoreHaptics
 
 struct AnswerView: View {
     @State private var text: String = ""
