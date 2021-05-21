@@ -15,12 +15,12 @@ struct StoryHoodApp: App {
                                Message(type: .character, text: "ta certo entao seu mentiroso vc vai ver eu vou te pegar e vc vai virar um porquinho q constroi casa de palha e ai eu vou coisa e vc vai ver", id: 3, image: nil, isLastMessage: false)]
 
     var body: some Scene {
-//        WindowGroup {
-//            ContentView()
-//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-//        }
         WindowGroup {
-            MessagesListView(messages: messages)
+            ContentView()
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
+//        WindowGroup {
+//            MessagesListView(messages: messages)
+//        }
     }
 }
