@@ -8,29 +8,25 @@
 import Foundation
 
 protocol MessageRepository {
-    func getMessagesFromJSON() -> Messages?
+    func readLocalJSONFile(forName name: String) -> Data?
 }
 
 
 //MARK: - Read JSON file
 
 struct readJSON: MessageRepository {
-
-    let url = Bundle.main.url(forResource: "message", withExtension: "json")
     
-    func getMessagesFromJSON() -> Messages? {
-        
-        guard let url = url else { return nil }
-        var messages: Messages
-        
+    public init() {}
+    
+    func readLocalJSONFile(forName name: String) -> Data? {
         do {
-            let data = try Data(contentsOf: url)
-            let decoder = JSONDecoder()
-            messages = try decoder.decode(Messages.self, from: data)
-            return messages
-        }
-        catch {
-            print(error.localizedDescription)
+            if let filePath = Bundle.main.path(forResource: name, ofType: "json") {
+                let fileUrl = URL(fileURLWithPath: filePath)
+                let data = try Data(contentsOf: fileUrl)
+                return data
+            }
+        } catch {
+            print("error: \(error)")
         }
         
         return nil

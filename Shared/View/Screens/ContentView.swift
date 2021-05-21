@@ -8,7 +8,7 @@
 import SwiftUI
 import CoreData
 
-struct ContentView: View {
+struct ContentView: View   {
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
@@ -35,7 +35,7 @@ struct ContentView: View {
         NavigationView {
             VStack{
                 NavigationLink(
-                    destination: testServiceView()) {
+                    destination: testServiceView(interactor: ChatInteractor())) {
                     Text("Submit")
                 }.navigationBarTitle("FirstView", displayMode: .inline)
             }
@@ -74,13 +74,16 @@ struct ContentView: View {
     }
 }
 
-struct testServiceView: View {
+struct testServiceView<Model>: View where Model: ViewInteractor {
     
-    @Environment(\.interactor) var interactor: ChatInteractor
+    @ObservedObject var interactor: Model
         
     var body: some View {
         Text("Main Title")
-        let _ = interactor.loadMessages()
+            .onAppear() {
+                self.interactor.load.loadMessages()
+                
+            }
     }
 }
 

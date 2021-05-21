@@ -12,35 +12,46 @@ protocol MessagesInteractor {
     func loadMessages()
 }
 
-struct ChatInteractor: MessagesInteractor, EnvironmentKey {
+protocol ViewInteractor: ObservableObject {
+    associatedtype Model
+    var load: MessagesInteractor { get }
+}
+
+class ChatInteractor: MessagesInteractor, ViewInteractor {
     
-    let messageRepository: MessageRepository
+    typealias Model = ViewInteractor
     
-    init(messageRepository: MessageRepository) {
-        self.messageRepository = messageRepository
+    
+    var messageRepository = readJSON()
+    
+    public init () {}
+    
+    func parse(jsonData: Data) -> MessagesRecord? {
+        
+        do {
+            let decodedData = try JSONDecoder().decode(MessagesRecord.self, from: jsonData)
+            return decodedData
+        } catch {
+            print("error: \(error)")
+        }
+        
+        return nil
     }
     
+    var load: MessagesInteractor {
+        return self
+    }
     
     func loadMessages() {
         
-        guard let messages = messageRepository.getMessagesFromJSON() else { return }
-        
-        messages.messages.forEach { message in
-            if message.id == 1 {
-                print("First Message: \(message.text)")
+        let jsonData = messageRepository.readLocalJSONFile(forName: "message")
+        if let data = jsonData {
+            if let messages = parse(jsonData: data) {
+                messages.messages.forEach { message in
+                    print(message.type)
+                }
             }
         }
     }
-    
-    static var defaultValue: Self { Self.default }
-    
-    private static let `default` = Self(messageRepository: MessageRepository.self as! MessageRepository)
 }
 
-extension EnvironmentValues {
-    
-    var interactor: ChatInteractor {
-        get { self[ChatInteractor.self] }
-        set { self[ChatInteractor.self] = newValue }
-    }
-}

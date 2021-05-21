@@ -30,6 +30,6 @@ struct Message: Codable {
     let isLastMessage: Bool
 }
 
-struct Messages: Codable {
+struct MessagesRecord: Codable {
     let messages: [Message]
 }
