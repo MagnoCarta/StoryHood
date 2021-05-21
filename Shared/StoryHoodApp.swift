@@ -13,7 +13,7 @@ struct StoryHoodApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ChatList()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

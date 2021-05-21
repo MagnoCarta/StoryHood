@@ -21,7 +21,10 @@ enum CharacterName: String, Codable, Equatable {
     }
 }
 
-struct Character: Codable {
+
+
+struct Character: Codable, Hashable {
     let name: CharacterName
     let narrativeId: String?
+    let isActive: Bool
 }
