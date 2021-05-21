@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B537BC82657F203008322AE /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B537BC72657F203008322AE /* Option.swift */; };
+		0B537BC92657F203008322AE /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B537BC72657F203008322AE /* Option.swift */; };
+		0B537BCB2657F262008322AE /* OptionBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B537BCA2657F262008322AE /* OptionBubble.swift */; };
+		0B537BCC2657F262008322AE /* OptionBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B537BCA2657F262008322AE /* OptionBubble.swift */; };
 		0B7AA89C2653FD6800ED179F /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7AA89B2653FD6800ED179F /* Tests_iOS.swift */; };
 		0B7AA8A72653FD6800ED179F /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7AA8A62653FD6800ED179F /* Tests_macOS.swift */; };
 		0B7AA8A92653FD6800ED179F /* StoryHood.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0B7AA87D2653FD6600ED179F /* StoryHood.xcdatamodeld */; };
@@ -33,6 +37,16 @@
 		0BBFEC83265407FC00D3379A /* ServiceTeste.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBFEC81265407FC00D3379A /* ServiceTeste.swift */; };
 		0BBFEC852654082D00D3379A /* MessageBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBFEC842654082D00D3379A /* MessageBubble.swift */; };
 		0BBFEC862654082D00D3379A /* MessageBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBFEC842654082D00D3379A /* MessageBubble.swift */; };
+		0BBFEC882655472800D3379A /* ChoicesBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBFEC872655472800D3379A /* ChoicesBubble.swift */; };
+		0BBFEC892655472800D3379A /* ChoicesBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBFEC872655472800D3379A /* ChoicesBubble.swift */; };
+		0BBFEC8B2655474000D3379A /* AnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBFEC8A2655474000D3379A /* AnswerView.swift */; };
+		0BBFEC8C2655474000D3379A /* AnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBFEC8A2655474000D3379A /* AnswerView.swift */; };
+		0BBFEC8F265558B500D3379A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBFEC8E265558B500D3379A /* Colors.swift */; };
+		0BBFEC90265558B500D3379A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBFEC8E265558B500D3379A /* Colors.swift */; };
+		0BBFEC922655AB9A00D3379A /* AnswerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBFEC912655AB9A00D3379A /* AnswerInteractor.swift */; };
+		0BBFEC932655AB9A00D3379A /* AnswerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBFEC912655AB9A00D3379A /* AnswerInteractor.swift */; };
+		0BBFEC952655B4FD00D3379A /* AnswerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBFEC942655B4FD00D3379A /* AnswerState.swift */; };
+		0BBFEC962655B4FD00D3379A /* AnswerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBFEC942655B4FD00D3379A /* AnswerState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +67,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B537BC72657F203008322AE /* Option.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
+		0B537BCA2657F262008322AE /* OptionBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionBubble.swift; sourceTree = "<group>"; };
 		0B7AA87E2653FD6600ED179F /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		0B7AA87F2653FD6600ED179F /* StoryHoodApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryHoodApp.swift; sourceTree = "<group>"; };
 		0B7AA8802653FD6600ED179F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -76,6 +92,11 @@
 		0BBFEC7E265407E300D3379A /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		0BBFEC81265407FC00D3379A /* ServiceTeste.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTeste.swift; sourceTree = "<group>"; };
 		0BBFEC842654082D00D3379A /* MessageBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBubble.swift; sourceTree = "<group>"; };
+		0BBFEC872655472800D3379A /* ChoicesBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoicesBubble.swift; sourceTree = "<group>"; };
+		0BBFEC8A2655474000D3379A /* AnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerView.swift; sourceTree = "<group>"; };
+		0BBFEC8E265558B500D3379A /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		0BBFEC912655AB9A00D3379A /* AnswerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerInteractor.swift; sourceTree = "<group>"; };
+		0BBFEC942655B4FD00D3379A /* AnswerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +150,7 @@
 				0BBFEC6C265401F100D3379A /* AppState */,
 				0BBFEC6B265401E700D3379A /* Interactor */,
 				0BBFEC682654016800D3379A /* View */,
+				0BBFEC8D2655517E00D3379A /* Utils */,
 				0B7AA87F2653FD6600ED179F /* StoryHoodApp.swift */,
 				0B7AA8822653FD6800ED179F /* Assets.xcassets */,
 				0B7AA87D2653FD6600ED179F /* StoryHood.xcdatamodeld */,
@@ -195,6 +217,8 @@
 			isa = PBXGroup;
 			children = (
 				0BBFEC842654082D00D3379A /* MessageBubble.swift */,
+				0BBFEC872655472800D3379A /* ChoicesBubble.swift */,
+				0B537BCA2657F262008322AE /* OptionBubble.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -203,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				0B7AA8802653FD6600ED179F /* ContentView.swift */,
+				0BBFEC8A2655474000D3379A /* AnswerView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -211,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				0BBFEC7B265407A300D3379A /* ChatInteractor.swift */,
+				0BBFEC912655AB9A00D3379A /* AnswerInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -219,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				0BBFEC782654077C00D3379A /* CharacterState.swift */,
+				0BBFEC942655B4FD00D3379A /* AnswerState.swift */,
 			);
 			path = AppState;
 			sourceTree = "<group>";
@@ -239,6 +266,7 @@
 			children = (
 				0BBFEC722654027000D3379A /* Message.swift */,
 				0BBFEC752654053A00D3379A /* Character.swift */,
+				0B537BC72657F203008322AE /* Option.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -265,6 +293,14 @@
 				0BBFEC7E265407E300D3379A /* CoreDataManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		0BBFEC8D2655517E00D3379A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0BBFEC8E265558B500D3379A /* Colors.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -424,15 +460,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BBFEC882655472800D3379A /* ChoicesBubble.swift in Sources */,
 				0BBFEC792654077C00D3379A /* CharacterState.swift in Sources */,
+				0BBFEC922655AB9A00D3379A /* AnswerInteractor.swift in Sources */,
+				0BBFEC8B2655474000D3379A /* AnswerView.swift in Sources */,
+				0B537BCB2657F262008322AE /* OptionBubble.swift in Sources */,
 				0B7AA8A92653FD6800ED179F /* StoryHood.xcdatamodeld in Sources */,
 				0BBFEC7C265407A300D3379A /* ChatInteractor.swift in Sources */,
 				0B7AA8AF2653FD6800ED179F /* Persistence.swift in Sources */,
+				0B537BC82657F203008322AE /* Option.swift in Sources */,
 				0BBFEC732654027000D3379A /* Message.swift in Sources */,
 				0BBFEC82265407FC00D3379A /* ServiceTeste.swift in Sources */,
 				0BBFEC762654053A00D3379A /* Character.swift in Sources */,
+				0BBFEC8F265558B500D3379A /* Colors.swift in Sources */,
 				0BBFEC7F265407E300D3379A /* CoreDataManager.swift in Sources */,
 				0B7AA8AB2653FD6800ED179F /* StoryHoodApp.swift in Sources */,
+				0BBFEC952655B4FD00D3379A /* AnswerState.swift in Sources */,
 				0B7AA8AD2653FD6800ED179F /* ContentView.swift in Sources */,
 				0BBFEC852654082D00D3379A /* MessageBubble.swift in Sources */,
 			);
@@ -442,15 +485,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BBFEC892655472800D3379A /* ChoicesBubble.swift in Sources */,
 				0BBFEC7A2654077C00D3379A /* CharacterState.swift in Sources */,
+				0BBFEC932655AB9A00D3379A /* AnswerInteractor.swift in Sources */,
+				0BBFEC8C2655474000D3379A /* AnswerView.swift in Sources */,
+				0B537BCC2657F262008322AE /* OptionBubble.swift in Sources */,
 				0B7AA8AA2653FD6800ED179F /* StoryHood.xcdatamodeld in Sources */,
 				0BBFEC7D265407A300D3379A /* ChatInteractor.swift in Sources */,
 				0B7AA8B02653FD6800ED179F /* Persistence.swift in Sources */,
+				0B537BC92657F203008322AE /* Option.swift in Sources */,
 				0BBFEC742654027000D3379A /* Message.swift in Sources */,
 				0BBFEC83265407FC00D3379A /* ServiceTeste.swift in Sources */,
 				0BBFEC772654053A00D3379A /* Character.swift in Sources */,
+				0BBFEC90265558B500D3379A /* Colors.swift in Sources */,
 				0BBFEC80265407E300D3379A /* CoreDataManager.swift in Sources */,
 				0B7AA8AC2653FD6800ED179F /* StoryHoodApp.swift in Sources */,
+				0BBFEC962655B4FD00D3379A /* AnswerState.swift in Sources */,
 				0B7AA8AE2653FD6800ED179F /* ContentView.swift in Sources */,
 				0BBFEC862654082D00D3379A /* MessageBubble.swift in Sources */,
 			);
