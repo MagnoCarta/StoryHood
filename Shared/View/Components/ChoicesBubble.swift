@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ChoicesView: View {
     @Binding var text: String
-    var choices: [Option] = [Option(text: "option 1", id: 1), Option(text: "option 2", id: 2), Option(text: "option 3", id: 3)]
+    var choices: [Option] = [Option(text: "Você fez maravilhas, loucuras no meu coração. Um beijo para você, não posso demorar. Tô numa ligação urbana, tem mais gente pra ligar. Você fez maravilhas, loucuras no meu coração. Um beijo para você, não posso demorar.Você fez maravilhas, loucuras no meu coração. Um beijo para você, não posso demorar. Tô numa ligação urbana, tem mais gente pra ligar. Você fez maravilhas, loucuras no meu coração. Um beijo para você, não posso demorar.", id: 1), Option(text: "option 2", id: 2), Option(text: "option 3", id: 3)]
     
     @State var selectedOption: Option? = nil
     

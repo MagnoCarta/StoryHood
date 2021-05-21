@@ -16,7 +16,9 @@ struct AnswerView: View {
             Spacer()
             HStack {
                 VStack {
-                    TextField("", text: $text)
+                    TextEditor(text: $text)
+                        .lineLimit(3)
+                        .frame(minHeight: 20, maxHeight: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 }
                 .padding()
                 .overlay(
@@ -26,12 +28,16 @@ struct AnswerView: View {
                 .background(Color.white)
                 .cornerRadius(6)
                 
+               
                 Button(action: {
-                   // chamar função de enviar
+                   // Chamar função de enviar
                 }) {
-                    Image("")
-                    .renderingMode(.original)
-                }
+                    Image("send-button")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                   .frame(maxHeight: 20)
+                        
+                }.frame(maxHeight: 20)
             }
             .padding()
             .border(Color.gray)
@@ -40,7 +46,6 @@ struct AnswerView: View {
                 ChoicesView(text: $text)
             }
         }
-        //.frame(width: 800, height: 490, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
         .background(Color(0xF6F2F2))
     }
     
