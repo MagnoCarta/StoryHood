@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreHaptics
 
 struct AnswerView: View {
     @State private var text: String = ""
@@ -26,6 +27,12 @@ struct AnswerView: View {
                     )
                     .background(Color.white)
                     .cornerRadius(6)
+                    .onTapGesture {
+                        if !isEnabled {
+                            let feedback = UINotificationFeedbackGenerator()
+                            feedback.notificationOccurred(.error)
+                        }
+                    }
                 
                 Button(action: {
                     interactor.saveUserMessage(option: text)
