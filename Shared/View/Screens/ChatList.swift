@@ -9,60 +9,78 @@ import Foundation
 import SwiftUI
 
 extension Color {
-    init(hex: UInt, alpha: Double = 1) {
+    init(color: String, alpha: Double = 1) {
+        var r:Double = 0
+        var g:Double = 0
+        var b:Double = 0
+        if color.contains("little") {
+            r = 255
+        }
+        if color.contains("bad") {
+            b = 255
+        }
+        if color.contains("trees") {
+            g = 255
+        }
         self.init(
             .sRGB,
-            red: Double((hex >> 16) & 0xff) / 255,
-            green: Double((hex >> 08) & 0xff) / 255,
-            blue: Double((hex >> 00) & 0xff) / 255,
+            red: r/255,
+            green:g/255,
+            blue: b/255,
             opacity: alpha
         )
     }
 }
 
 struct ChatList: View {
+
     @State var selection: String = ""
     var a = [0,1,2,3]
-    var characters = [Character(name: .littleRedHood, narrativeId: "red",isActive: false),Character(name: .littleRedHood, narrativeId: "blue",isActive: false),Character(name: .littleRedHood, narrativeId: "black",isActive: false),Character(name: .littleRedHood, narrativeId: "green",isActive: false)
+    @State var characters = [Character(name: .littleRedRidingHood, narrativeId: "littleRedRidingHood",isActive: true),Character(name: .littleRedRidingHood, narrativeId: "badWolf",isActive: false),Character(name: .littleRedRidingHood, narrativeId: "sendButton",isActive: false),Character(name: .littleRedRidingHood, narrativeId: "treesBg",isActive: false)
     ]
     var body: some View {
         ScrollView {
-            LazyVStack {
+            LazyVStack(alignment: .leading) {
                 ForEach(characters,id:\.self) { color in
                     ZStack {
                     Circle()
                         .fill(Color.blue)
-                        .frame(width: 50, height: 50)
+                        .frame(width: 106, height: 107)
                         .onTapGesture(perform: {
                             selection = color.narrativeId!
                             })
                         .padding(10)
-
+                        Image(color.narrativeId!)
+                            .resizable()
+                            .frame(width:106,height: 107)
+                            .clipShape(Circle())
+                            .onTapGesture(perform: {
+                                selection = color.narrativeId!
+                                })
                     if selection == color.narrativeId {
                         //AQUI ENTRA NO CHAT ESPECIFICO
                         Circle()
-                            .stroke(Color.red, lineWidth: 5)
-                            .frame(width: 60, height: 60)
+                            .stroke(Color(color: selection), lineWidth: 8)
+                            .frame(width: 110, height: 110)
 
                     }
+                        if color.isActive {
+                            Image("onlineIcon").frame(width:28,height: 28)
+                                .clipShape(Circle())
+                                .offset(x: 59, y: -40)
+                        } else {
+                            Image("offlineIcon").frame(width:28,height: 28)
+                                .clipShape(Circle())
+                                .offset(x: 59, y: -40)
+                        }
                 }
             }
-            }.position(x: 60, y: 300)
+            }
+
         }
     }
 
 }
-
-
-struct CircleView: View {
-    var size: CGSize
-    var color: Color
-    var body: some View {
-        Circle()
-            .foregroundColor(color)
-    }
-}
-
 
 struct ChatList_Previews: PreviewProvider {
     
@@ -72,5 +90,7 @@ struct ChatList_Previews: PreviewProvider {
 }
 
 
-
-
+fileprivate enum Multipliers {
+    static let height: CGFloat = UIScreen.main.bounds.height/1137
+    static let width: CGFloat = UIScreen.main.bounds.width/655
+}

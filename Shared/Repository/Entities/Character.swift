@@ -8,7 +8,7 @@
 import Foundation
 
 enum CharacterName: String, Codable, Equatable {
-    case littleRedHood
+    case littleRedRidingHood
     case badWolf
     case unknown
 
@@ -20,8 +20,6 @@ enum CharacterName: String, Codable, Equatable {
         self = CharacterName(rawValue: rawValue) ?? .unknown
     }
 }
-
-
 
 struct Character: Codable, Hashable {
     let name: CharacterName
