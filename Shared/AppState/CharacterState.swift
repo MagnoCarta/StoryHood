@@ -6,5 +6,11 @@
 //
 
 import Foundation
+import SwiftUI
 
+struct AppState {
+    
+    var currentMessage: Message?
+    var nextMessages = [Message]()
+}
 

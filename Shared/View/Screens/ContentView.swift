@@ -35,7 +35,7 @@ struct ContentView: View   {
         NavigationView {
             VStack{
                 NavigationLink(
-                    destination: testServiceView(interactor: ChatInteractor())) {
+                    destination: testServiceView()) {
                     Text("Submit")
                 }.navigationBarTitle("FirstView", displayMode: .inline)
             }
@@ -74,15 +74,25 @@ struct ContentView: View   {
     }
 }
 
-struct testServiceView<Model>: View where Model: ViewInteractor {
+struct testServiceView: View {
     
-    @ObservedObject var interactor: Model
-        
+    @State private var interactor: ChatInteractor = ChatInteractor()
+    private var appState: AppState {
+        get {
+            return self.interactor.appState
+        }
+    }
+    
     var body: some View {
         Text("Main Title")
             .onAppear() {
-                self.interactor.load.loadMessages()
-                
+                self.interactor.setCurrentMesssage()
+                print("First Message: \(self.appState.currentMessage?.text ?? "")")
+                self.interactor.setNextMessagesFrom(id: self.appState.currentMessage?.id ?? 0)
+                print("Choose an option: ")
+                appState.nextMessages.forEach { msg in
+                    print("() \(msg.text)")
+                }
             }
     }
 }
