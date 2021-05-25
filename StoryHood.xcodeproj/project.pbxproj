@@ -36,6 +36,11 @@
 		D8B6E62526568AA3004111E3 /* message.json in Resources */ = {isa = PBXBuildFile; fileRef = D8B6E62426568AA3004111E3 /* message.json */; };
 		D8B6E62626568AA3004111E3 /* message.json in Resources */ = {isa = PBXBuildFile; fileRef = D8B6E62426568AA3004111E3 /* message.json */; };
 		D8B6E62726568AA3004111E3 /* message.json in Resources */ = {isa = PBXBuildFile; fileRef = D8B6E62426568AA3004111E3 /* message.json */; };
+		E97C9FC6265538BB0014CBFE /* MessagesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97C9FC5265538BB0014CBFE /* MessagesListView.swift */; };
+		E97C9FC7265538BB0014CBFE /* MessagesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97C9FC5265538BB0014CBFE /* MessagesListView.swift */; };
+		E9E66A1726569EBD00552450 /* MessagesTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E66A1626569EBD00552450 /* MessagesTopBar.swift */; };
+		E9E66A1826569EBD00552450 /* MessagesTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E66A1626569EBD00552450 /* MessagesTopBar.swift */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +85,9 @@
 		0BBFEC81265407FC00D3379A /* ServiceTeste.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTeste.swift; sourceTree = "<group>"; };
 		0BBFEC842654082D00D3379A /* MessageBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBubble.swift; sourceTree = "<group>"; };
 		D8B6E62426568AA3004111E3 /* message.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = message.json; sourceTree = "<group>"; };
+		E97C9FC5265538BB0014CBFE /* MessagesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesListView.swift; sourceTree = "<group>"; };
+		E9E66A1626569EBD00552450 /* MessagesTopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesTopBar.swift; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				0BBFEC842654082D00D3379A /* MessageBubble.swift */,
+				E9E66A1626569EBD00552450 /* MessagesTopBar.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -207,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				0B7AA8802653FD6600ED179F /* ContentView.swift */,
+				E97C9FC5265538BB0014CBFE /* MessagesListView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -436,8 +446,10 @@
 				0B7AA8A92653FD6800ED179F /* StoryHood.xcdatamodeld in Sources */,
 				0BBFEC7C265407A300D3379A /* ChatInteractor.swift in Sources */,
 				0B7AA8AF2653FD6800ED179F /* Persistence.swift in Sources */,
+				E97C9FC6265538BB0014CBFE /* MessagesListView.swift in Sources */,
 				0BBFEC732654027000D3379A /* Message.swift in Sources */,
 				0BBFEC82265407FC00D3379A /* ServiceTeste.swift in Sources */,
+				E9E66A1726569EBD00552450 /* MessagesTopBar.swift in Sources */,
 				0BBFEC762654053A00D3379A /* Character.swift in Sources */,
 				0BBFEC7F265407E300D3379A /* CoreDataManager.swift in Sources */,
 				0B7AA8AB2653FD6800ED179F /* StoryHoodApp.swift in Sources */,
@@ -454,8 +466,10 @@
 				0B7AA8AA2653FD6800ED179F /* StoryHood.xcdatamodeld in Sources */,
 				0BBFEC7D265407A300D3379A /* ChatInteractor.swift in Sources */,
 				0B7AA8B02653FD6800ED179F /* Persistence.swift in Sources */,
+				E97C9FC7265538BB0014CBFE /* MessagesListView.swift in Sources */,
 				0BBFEC742654027000D3379A /* Message.swift in Sources */,
 				0BBFEC83265407FC00D3379A /* ServiceTeste.swift in Sources */,
+				E9E66A1826569EBD00552450 /* MessagesTopBar.swift in Sources */,
 				0BBFEC772654053A00D3379A /* Character.swift in Sources */,
 				0BBFEC80265407E300D3379A /* CoreDataManager.swift in Sources */,
 				0B7AA8AC2653FD6800ED179F /* StoryHoodApp.swift in Sources */,

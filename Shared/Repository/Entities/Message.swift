@@ -21,7 +21,7 @@ enum MessageType: String, Codable, Equatable {
     }
 }
 
-struct Message: Codable {
+struct Message: Codable, Equatable {
     let type: MessageType
     let text: String
     let id: Int
