@@ -9,8 +9,10 @@ import SwiftUI
 
 struct ChoicesView: View {
     @Binding var text: String
-    var choices: [Option] = [Option(text: "Você fez maravilhas, loucuras no meu coração. Um beijo para você, não posso demorar. Tô numa ligação urbana, tem mais gente pra ligarVocê fez maravilhas, loucuras no meu coração. Um beijo para você, não posso demorar. Tô numa ligação urbana, tem mais gente pra ligar", id: 1), Option(text: "Você fez maravilhas, loucuras no meu coração. Um beijo para você, não posso demorar. Tô numa ligação urbana, tem mais gente pra ligar", id: 2), Option(text: "Você fez maravilhas, loucuras no meu coração. Um beijo para você, não posso demorar. Tô numa ligação urbana, tem mais gente pra ligar", id: 3)]
-    
+    @EnvironmentObject var appState: MessageState
+
+    @State var choices: [Option] = []
+    @State var isTyping = false
     @State var selectedOption: Option? = nil
     
     var body: some View {
@@ -23,21 +25,30 @@ struct ChoicesView: View {
                         
                         let subAnswer = Substring(option.text)
                         var repetitions = 0
-                        
-                        Timer.scheduledTimer(withTimeInterval: 0.09, repeats: true) { [self] timer in
-                        
-                            repetitions+=1
-                            let range = subAnswer.index(subAnswer.startIndex, offsetBy: repetitions)
-                            
-                            text = String(subAnswer[..<range])
-                            
-                            if repetitions == option.text.count {
-                                timer.invalidate()
+                        if !isTyping {
+                            Timer.scheduledTimer(withTimeInterval: 0.09, repeats: true) { [self] timer in
+                                isTyping = true
+                                repetitions+=1
+                                let range = subAnswer.index(subAnswer.startIndex, offsetBy: repetitions)
+
+                                text = String(subAnswer[..<range])
+
+                                if repetitions == option.text.count {
+                                    timer.invalidate()
+                                    isTyping = false
+                                }
                             }
                         }
                     }
+            }.onReceive(appState.$currentOptions) { currentOptions in
+                transformStringsToOptions(options: currentOptions)
             }
         }
+    }
+
+    private func transformStringsToOptions(options: [String]) {
+        choices = []
+        options.forEach({ choices.append(Option(text: $0, id: .random(in: 0...300))) })
     }
 
 }

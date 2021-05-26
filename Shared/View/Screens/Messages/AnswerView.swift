@@ -9,14 +9,13 @@ import SwiftUI
 
 struct AnswerView: View {
     @State private var text: String = ""
-    @Binding var isEnabled: Bool //O pai vai ser @State e vai Habilitar/Desabilitar ChoicesView
-    var interactor = AnswerInteractor()
-    
-     var body: some View {
+    @EnvironmentObject var interactor: MessagesInteractor
+
+    var body: some View {
         Spacer()
         VStack {
             HStack {
-                if !isEnabled {
+                if !interactor.isAnswerEnabled {
                     Text("Escreva sua mensagem")
                         .foregroundColor(.secondary)
                         .lineLimit(1)
@@ -27,7 +26,7 @@ struct AnswerView: View {
                             .stroke(Color(0xCBC5C5), lineWidth: 2)
                         )
                         .background(Color.white)
-                        .cornerRadius(6)
+                        .cornerRadius(17)
                         .onTapGesture {
                             #if os(iOS)
                             let feedback = UINotificationFeedbackGenerator()
@@ -49,7 +48,8 @@ struct AnswerView: View {
                 }
                 
                 Button(action: {
-                    interactor.saveUserMessage(option: text)
+                    interactor.sendMessage(option: text)
+                    text = ""
                 }) {
                     Image("send-button")
                     .resizable()
@@ -57,16 +57,10 @@ struct AnswerView: View {
                 }.frame(maxHeight: 20)
             }.padding()
             
-            if isEnabled {
+            if interactor.isAnswerEnabled {
                 ChoicesView(text: $text)
             }
         }.background(Color(0xF6F2F2))
     }
     
-}
-
-struct AnswerView_Previews: PreviewProvider {
-    static var previews: some View {
-        AnswerView(isEnabled: .constant(false))
-    }
 }

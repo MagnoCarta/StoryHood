@@ -37,20 +37,22 @@
 		0BBFEC83265407FC00D3379A /* ServiceTeste.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBFEC81265407FC00D3379A /* ServiceTeste.swift */; };
 		0BBFEC852654082D00D3379A /* MessageBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBFEC842654082D00D3379A /* MessageBubble.swift */; };
 		0BBFEC862654082D00D3379A /* MessageBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBFEC842654082D00D3379A /* MessageBubble.swift */; };
-		E97C9FC6265538BB0014CBFE /* MessagesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97C9FC5265538BB0014CBFE /* MessagesListView.swift */; };
-		E97C9FC7265538BB0014CBFE /* MessagesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97C9FC5265538BB0014CBFE /* MessagesListView.swift */; };
-		E9E66A1726569EBD00552450 /* MessagesTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E66A1626569EBD00552450 /* MessagesTopBar.swift */; };
-		E9E66A1826569EBD00552450 /* MessagesTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E66A1626569EBD00552450 /* MessagesTopBar.swift */; };
 		0BBFEC882655472800D3379A /* ChoicesBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBFEC872655472800D3379A /* ChoicesBubble.swift */; };
 		0BBFEC892655472800D3379A /* ChoicesBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBFEC872655472800D3379A /* ChoicesBubble.swift */; };
 		0BBFEC8B2655474000D3379A /* AnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBFEC8A2655474000D3379A /* AnswerView.swift */; };
 		0BBFEC8C2655474000D3379A /* AnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBFEC8A2655474000D3379A /* AnswerView.swift */; };
 		0BBFEC8F265558B500D3379A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBFEC8E265558B500D3379A /* Colors.swift */; };
 		0BBFEC90265558B500D3379A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBFEC8E265558B500D3379A /* Colors.swift */; };
-		0BBFEC922655AB9A00D3379A /* AnswerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBFEC912655AB9A00D3379A /* AnswerInteractor.swift */; };
-		0BBFEC932655AB9A00D3379A /* AnswerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBFEC912655AB9A00D3379A /* AnswerInteractor.swift */; };
-		0BBFEC952655B4FD00D3379A /* AnswerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBFEC942655B4FD00D3379A /* AnswerState.swift */; };
-		0BBFEC962655B4FD00D3379A /* AnswerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBFEC942655B4FD00D3379A /* AnswerState.swift */; };
+		0BBFEC922655AB9A00D3379A /* MessageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBFEC912655AB9A00D3379A /* MessageInteractor.swift */; };
+		0BBFEC932655AB9A00D3379A /* MessageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBFEC912655AB9A00D3379A /* MessageInteractor.swift */; };
+		0BBFEC952655B4FD00D3379A /* MessageState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBFEC942655B4FD00D3379A /* MessageState.swift */; };
+		0BBFEC962655B4FD00D3379A /* MessageState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBFEC942655B4FD00D3379A /* MessageState.swift */; };
+		E97C9FC6265538BB0014CBFE /* MessagesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97C9FC5265538BB0014CBFE /* MessagesListView.swift */; };
+		E97C9FC7265538BB0014CBFE /* MessagesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97C9FC5265538BB0014CBFE /* MessagesListView.swift */; };
+		E98CDC70265D290100B2369B /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98CDC6F265D290100B2369B /* MessageView.swift */; };
+		E98CDC71265D290100B2369B /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98CDC6F265D290100B2369B /* MessageView.swift */; };
+		E9E66A1726569EBD00552450 /* MessagesTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E66A1626569EBD00552450 /* MessagesTopBar.swift */; };
+		E9E66A1826569EBD00552450 /* MessagesTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E66A1626569EBD00552450 /* MessagesTopBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,13 +98,14 @@
 		0BBFEC7E265407E300D3379A /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		0BBFEC81265407FC00D3379A /* ServiceTeste.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTeste.swift; sourceTree = "<group>"; };
 		0BBFEC842654082D00D3379A /* MessageBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBubble.swift; sourceTree = "<group>"; };
-		E97C9FC5265538BB0014CBFE /* MessagesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesListView.swift; sourceTree = "<group>"; };
-		E9E66A1626569EBD00552450 /* MessagesTopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesTopBar.swift; sourceTree = "<group>"; };
 		0BBFEC872655472800D3379A /* ChoicesBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoicesBubble.swift; sourceTree = "<group>"; };
 		0BBFEC8A2655474000D3379A /* AnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerView.swift; sourceTree = "<group>"; };
 		0BBFEC8E265558B500D3379A /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		0BBFEC912655AB9A00D3379A /* AnswerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerInteractor.swift; sourceTree = "<group>"; };
-		0BBFEC942655B4FD00D3379A /* AnswerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerState.swift; sourceTree = "<group>"; };
+		0BBFEC912655AB9A00D3379A /* MessageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageInteractor.swift; sourceTree = "<group>"; };
+		0BBFEC942655B4FD00D3379A /* MessageState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageState.swift; sourceTree = "<group>"; };
+		E97C9FC5265538BB0014CBFE /* MessagesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesListView.swift; sourceTree = "<group>"; };
+		E98CDC6F265D290100B2369B /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		E9E66A1626569EBD00552450 /* MessagesTopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesTopBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,9 +236,8 @@
 		0BBFEC6A2654018800D3379A /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				E98CDC72265D2B6800B2369B /* Messages */,
 				0B7AA8802653FD6600ED179F /* ContentView.swift */,
-				E97C9FC5265538BB0014CBFE /* MessagesListView.swift */,
-				0BBFEC8A2655474000D3379A /* AnswerView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -244,7 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				0BBFEC7B265407A300D3379A /* ChatInteractor.swift */,
-				0BBFEC912655AB9A00D3379A /* AnswerInteractor.swift */,
+				0BBFEC912655AB9A00D3379A /* MessageInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -253,7 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				0BBFEC782654077C00D3379A /* CharacterState.swift */,
-				0BBFEC942655B4FD00D3379A /* AnswerState.swift */,
+				0BBFEC942655B4FD00D3379A /* MessageState.swift */,
 			);
 			path = AppState;
 			sourceTree = "<group>";
@@ -309,6 +311,16 @@
 				0BBFEC8E265558B500D3379A /* Colors.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		E98CDC72265D2B6800B2369B /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				E98CDC6F265D290100B2369B /* MessageView.swift */,
+				0BBFEC8A2655474000D3379A /* AnswerView.swift */,
+				E97C9FC5265538BB0014CBFE /* MessagesListView.swift */,
+			);
+			path = Messages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -470,7 +482,7 @@
 			files = (
 				0BBFEC882655472800D3379A /* ChoicesBubble.swift in Sources */,
 				0BBFEC792654077C00D3379A /* CharacterState.swift in Sources */,
-				0BBFEC922655AB9A00D3379A /* AnswerInteractor.swift in Sources */,
+				0BBFEC922655AB9A00D3379A /* MessageInteractor.swift in Sources */,
 				0BBFEC8B2655474000D3379A /* AnswerView.swift in Sources */,
 				0B537BCB2657F262008322AE /* OptionBubble.swift in Sources */,
 				0B7AA8A92653FD6800ED179F /* StoryHood.xcdatamodeld in Sources */,
@@ -480,12 +492,13 @@
 				0B537BC82657F203008322AE /* Option.swift in Sources */,
 				0BBFEC732654027000D3379A /* Message.swift in Sources */,
 				0BBFEC82265407FC00D3379A /* ServiceTeste.swift in Sources */,
+				E98CDC70265D290100B2369B /* MessageView.swift in Sources */,
 				E9E66A1726569EBD00552450 /* MessagesTopBar.swift in Sources */,
 				0BBFEC762654053A00D3379A /* Character.swift in Sources */,
 				0BBFEC8F265558B500D3379A /* Colors.swift in Sources */,
 				0BBFEC7F265407E300D3379A /* CoreDataManager.swift in Sources */,
 				0B7AA8AB2653FD6800ED179F /* StoryHoodApp.swift in Sources */,
-				0BBFEC952655B4FD00D3379A /* AnswerState.swift in Sources */,
+				0BBFEC952655B4FD00D3379A /* MessageState.swift in Sources */,
 				0B7AA8AD2653FD6800ED179F /* ContentView.swift in Sources */,
 				0BBFEC852654082D00D3379A /* MessageBubble.swift in Sources */,
 			);
@@ -497,7 +510,7 @@
 			files = (
 				0BBFEC892655472800D3379A /* ChoicesBubble.swift in Sources */,
 				0BBFEC7A2654077C00D3379A /* CharacterState.swift in Sources */,
-				0BBFEC932655AB9A00D3379A /* AnswerInteractor.swift in Sources */,
+				0BBFEC932655AB9A00D3379A /* MessageInteractor.swift in Sources */,
 				0BBFEC8C2655474000D3379A /* AnswerView.swift in Sources */,
 				0B537BCC2657F262008322AE /* OptionBubble.swift in Sources */,
 				0B7AA8AA2653FD6800ED179F /* StoryHood.xcdatamodeld in Sources */,
@@ -507,12 +520,13 @@
 				0B537BC92657F203008322AE /* Option.swift in Sources */,
 				0BBFEC742654027000D3379A /* Message.swift in Sources */,
 				0BBFEC83265407FC00D3379A /* ServiceTeste.swift in Sources */,
+				E98CDC71265D290100B2369B /* MessageView.swift in Sources */,
 				E9E66A1826569EBD00552450 /* MessagesTopBar.swift in Sources */,
 				0BBFEC772654053A00D3379A /* Character.swift in Sources */,
 				0BBFEC90265558B500D3379A /* Colors.swift in Sources */,
 				0BBFEC80265407E300D3379A /* CoreDataManager.swift in Sources */,
 				0B7AA8AC2653FD6800ED179F /* StoryHoodApp.swift in Sources */,
-				0BBFEC962655B4FD00D3379A /* AnswerState.swift in Sources */,
+				0BBFEC962655B4FD00D3379A /* MessageState.swift in Sources */,
 				0B7AA8AE2653FD6800ED179F /* ContentView.swift in Sources */,
 				0BBFEC862654082D00D3379A /* MessageBubble.swift in Sources */,
 			);
