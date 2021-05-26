@@ -37,6 +37,9 @@
 		0BBFEC83265407FC00D3379A /* ServiceTeste.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBFEC81265407FC00D3379A /* ServiceTeste.swift */; };
 		0BBFEC852654082D00D3379A /* MessageBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBFEC842654082D00D3379A /* MessageBubble.swift */; };
 		0BBFEC862654082D00D3379A /* MessageBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBFEC842654082D00D3379A /* MessageBubble.swift */; };
+		D8B6E62526568AA3004111E3 /* message.json in Resources */ = {isa = PBXBuildFile; fileRef = D8B6E62426568AA3004111E3 /* message.json */; };
+		D8B6E62626568AA3004111E3 /* message.json in Resources */ = {isa = PBXBuildFile; fileRef = D8B6E62426568AA3004111E3 /* message.json */; };
+		D8B6E62726568AA3004111E3 /* message.json in Resources */ = {isa = PBXBuildFile; fileRef = D8B6E62426568AA3004111E3 /* message.json */; };
 		0BBFEC882655472800D3379A /* ChoicesBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBFEC872655472800D3379A /* ChoicesBubble.swift */; };
 		0BBFEC892655472800D3379A /* ChoicesBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBFEC872655472800D3379A /* ChoicesBubble.swift */; };
 		0BBFEC8B2655474000D3379A /* AnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBFEC8A2655474000D3379A /* AnswerView.swift */; };
@@ -53,6 +56,7 @@
 		E98CDC71265D290100B2369B /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98CDC6F265D290100B2369B /* MessageView.swift */; };
 		E9E66A1726569EBD00552450 /* MessagesTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E66A1626569EBD00552450 /* MessagesTopBar.swift */; };
 		E9E66A1826569EBD00552450 /* MessagesTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E66A1626569EBD00552450 /* MessagesTopBar.swift */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,9 +107,11 @@
 		0BBFEC8E265558B500D3379A /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		0BBFEC912655AB9A00D3379A /* MessageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageInteractor.swift; sourceTree = "<group>"; };
 		0BBFEC942655B4FD00D3379A /* MessageState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageState.swift; sourceTree = "<group>"; };
+		D8B6E62426568AA3004111E3 /* message.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = message.json; sourceTree = "<group>"; };
 		E97C9FC5265538BB0014CBFE /* MessagesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesListView.swift; sourceTree = "<group>"; };
 		E98CDC6F265D290100B2369B /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		E9E66A1626569EBD00552450 /* MessagesTopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesTopBar.swift; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -284,6 +290,7 @@
 		0BBFEC6F2654022C00D3379A /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				D8B6E62426568AA3004111E3 /* message.json */,
 				0BBFEC81265407FC00D3379A /* ServiceTeste.swift */,
 			);
 			path = Services;
@@ -448,6 +455,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B7AA8B12653FD6800ED179F /* Assets.xcassets in Resources */,
+				D8B6E62526568AA3004111E3 /* message.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +464,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B7AA8B22653FD6800ED179F /* Assets.xcassets in Resources */,
+				D8B6E62626568AA3004111E3 /* message.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,6 +472,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8B6E62726568AA3004111E3 /* message.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -681,7 +691,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BABNQ3LD22;
+				DEVELOPMENT_TEAM = 2V8P924DLJ;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -703,7 +713,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BABNQ3LD22;
+				DEVELOPMENT_TEAM = 2V8P924DLJ;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -728,7 +738,7 @@
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 2V8P924DLJ;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = macOS/Info.plist;
@@ -752,7 +762,7 @@
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 2V8P924DLJ;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = macOS/Info.plist;
