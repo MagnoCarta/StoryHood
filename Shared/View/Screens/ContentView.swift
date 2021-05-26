@@ -8,14 +8,14 @@
 import SwiftUI
 import CoreData
 
-struct ContentView: View {
+struct ContentView: View   {
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
-
+    
     var body: some View {
         List {
             ForEach(items) { item in
@@ -30,6 +30,14 @@ struct ContentView: View {
 
             Button(action: addItem) {
                 Label("Add Item", systemImage: "plus")
+            }
+        }
+        NavigationView {
+            VStack{
+                NavigationLink(
+                    destination: testServiceView()) {
+                    Text("Submit")
+                }.navigationBarTitle("FirstView", displayMode: .inline)
             }
         }
     }
@@ -63,6 +71,29 @@ struct ContentView: View {
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
         }
+    }
+}
+
+struct testServiceView: View {
+    
+    @State private var interactor: ChatInteractor = ChatInteractor()
+    private var appState: AppState {
+        get {
+            return self.interactor.appState
+        }
+    }
+    
+    var body: some View {
+        Text("Main Title")
+            .onAppear() {
+                self.interactor.setCurrentMesssage()
+                print("First Message: \(self.appState.currentMessage?.text ?? "")")
+                self.interactor.setNextMessagesFrom(id: self.appState.currentMessage?.id ?? 0)
+                print("Choose an option: ")
+                appState.nextMessages.forEach { msg in
+                    print("() \(msg.text)")
+                }
+            }
     }
 }
 
