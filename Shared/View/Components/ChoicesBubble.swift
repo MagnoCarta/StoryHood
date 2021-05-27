@@ -22,6 +22,7 @@ struct ChoicesView: View {
                     .onTapGesture {
     
                         selectedOption = option
+                        appState.selectedOption = option
                         
                         let subAnswer = Substring(option.text)
                         var repetitions = 0
@@ -46,9 +47,9 @@ struct ChoicesView: View {
         }
     }
 
-    private func transformStringsToOptions(options: [String]) {
+    private func transformStringsToOptions(options: [Message]) {
         choices = []
-        options.forEach({ choices.append(Option(text: $0, id: .random(in: 0...300))) })
+        options.forEach({ choices.append(Option(text: $0.text, id: $0.id)) })
     }
 
 }

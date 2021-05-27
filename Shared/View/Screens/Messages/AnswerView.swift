@@ -46,9 +46,8 @@ struct AnswerView: View {
                         .background(Color.white)
                         .cornerRadius(6)
                 }
-                
                 Button(action: {
-                    interactor.sendMessage(option: text)
+                    interactor.sendMessage()
                     text = ""
                 }) {
                     Image("send-button")

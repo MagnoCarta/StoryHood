@@ -10,22 +10,27 @@ import Foundation
 class MessagesInteractor: ObservableObject {
 
     let appState = MessageState()
+    var messageRepository = readJSON()
+    
     @Published var isAnswerEnabled: Bool = false
     var lastShowMessage: Int = -1
 
-    let messages: [Message] = [Message(type: .character, text: "Oi, eu sou o Lobo Bad Lobo huhuhuh", id: 1, image: nil, isLastMessage: false),
-                               Message(type: .character, text: "Oiasdasdasdqwe, eu sou o Lobo Bad Lobo huhuhuh", id: 2, image: nil, isLastMessage: true),
-                               Message(type: .character, text: "ta certo entao seu mentiroso vc vai ver eu vou te pegar e vc vai virar um porquinho q constroi casa de palha e ai eu vou coisa e vc vai ver", id: 3, image: nil, isLastMessage: true)]
+    var messages: [Message] {
+        get {
+            getMessagesListOfType(.character)
+        }
+    }
 
-    var choicesText: [String] = [
-                                "Você fez maravilhas, loucuras no meu coração. Um beijo para você, não posso demorar. Tô numa ligação urbana, tem mais gente pra ligar. Você fez maravilhas, loucuras no meu coração. Um beijo para você, não posso demorar. Tô numa ligação urbana, tem mais gente pra ligar",
-                                "Você fez maravilhas, loucuras no meu coração. Um beijo para você, não posso demorar. Tô numa ligação urbana, tem mais gente pra ligar",
-                                "Você fez maravilhas, loucuras no meu coração. Um beijo para você, não posso demorar. Tô numa ligação urbana, tem mais gente pra ligar"
-                                ]
+    var choicesText: [Message] {
+        get {
+            getMessagesListOfType(.reader)
+        }
+    }
 
     var counter = -1
 
     func loadFirstMessages() {
+        
         for (idx, message) in messages.enumerated() {
             if message.isLastMessage {
                 appState.send(message: message)
@@ -35,19 +40,69 @@ class MessagesInteractor: ObservableObject {
             appState.send(message: message)
         }
     }
+    
+    func loadCurrentMessage(_ id: Int = 1)  {
+        print(id)
+        guard let currentMessage = messages.filter({$0.id == id}).first else { return }
+        appState.currentOptions =  choicesText.filter {
+            currentMessage.nextMessagesId?.contains($0.id) ?? false
+        }
+        appState.send(message: currentMessage)
+    }
+    
+    func parse(jsonData: Data) -> MessagesRecord? {
+        
+        do {
+            let decodedData = try JSONDecoder().decode(MessagesRecord.self, from: jsonData)
+            return decodedData
+        } catch {
+            print("error: \(error)")
+        }
+        
+        return nil
+    }
+    
+    func loadMessages() -> MessagesRecord? {
+        
+        let jsonData = messageRepository.readLocalJSONFile(forName: "message")
+        if let data = jsonData {
+            if let messages = parse(jsonData: data) {
+                return messages
+            }
+        }
+        return nil
+    }
+    
+    func getMessagesListOfType(_ type: MessageType) -> [Message] {
+        
+        guard let allMessages = loadMessages() else {return []}
+        
+        
+        switch type {
+        case .character:
+            return allMessages.messages.filter {$0.type == .character}
+        case .reader:
+            return allMessages.messages.filter {$0.type == .reader}
+        case .unknown:
+            return []
+        }
+    }
+    
 
     func showAnswerOptions() {
         if !isAnswerEnabled {
-            appState.currentOptions = choicesText
+            
+            loadCurrentMessage(appState.lastMessage?.id ?? 0)
+            //appState.currentOptions = choicesText
             isAnswerEnabled = true
         }
     }
 
-    func sendMessage(option: String) {
+    func sendMessage() {
         isAnswerEnabled = false
-        let answer = Message(type: .reader, text: option, id: 5, image: nil, isLastMessage: true)
-        appState.send(message: answer)
-        getNextMessage()
+        loadCurrentMessage(appState.selectedOption?.id ?? 0)
+        //appState.send(message: answer)
+        //getNextMessage()
     }
 
     func getNextMessage() {

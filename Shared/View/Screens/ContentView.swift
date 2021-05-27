@@ -32,14 +32,6 @@ struct ContentView: View   {
                 Label("Add Item", systemImage: "plus")
             }
         }
-        NavigationView {
-            VStack{
-                NavigationLink(
-                    destination: testServiceView()) {
-                    Text("Submit")
-                }.navigationBarTitle("FirstView", displayMode: .inline)
-            }
-        }
     }
 
     private func addItem() {
@@ -71,29 +63,6 @@ struct ContentView: View   {
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
         }
-    }
-}
-
-struct testServiceView: View {
-    
-    @State private var interactor: ChatInteractor = ChatInteractor()
-    private var appState: AppState {
-        get {
-            return self.interactor.appState
-        }
-    }
-    
-    var body: some View {
-        Text("Main Title")
-            .onAppear() {
-                self.interactor.setCurrentMesssage()
-                print("First Message: \(self.appState.currentMessage?.text ?? "")")
-                self.interactor.setNextMessagesFrom(id: self.appState.currentMessage?.id ?? 0)
-                print("Choose an option: ")
-                appState.nextMessages.forEach { msg in
-                    print("() \(msg.text)")
-                }
-            }
     }
 }
 

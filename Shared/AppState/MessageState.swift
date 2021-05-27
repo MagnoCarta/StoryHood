@@ -10,8 +10,9 @@ import SwiftUI
 class MessageState: ObservableObject {
 
     @Published var onScreenMessages: [Message] = []
-    @Published var currentOptions: [String] = []
+    @Published var currentOptions: [Message] = []
     @Published var lastMessage: Message?
+    @Published var selectedOption: Option? 
 
     func send(message: Message) {
         onScreenMessages.append(message)
