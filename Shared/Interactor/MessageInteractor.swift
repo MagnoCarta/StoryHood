@@ -15,6 +15,12 @@ class MessagesInteractor: ObservableObject {
     @Published var isAnswerEnabled: Bool = false
     var lastShowMessage: Int = -1
 
+    var allMessages: MessagesRecord? {
+        get {
+            loadMessages()
+        }
+    }
+
     var messages: [Message] {
         get {
             getMessagesListOfType(.character)
@@ -42,12 +48,16 @@ class MessagesInteractor: ObservableObject {
     }
     
     func loadCurrentMessage(_ id: Int = 1)  {
-        print(id)
-        guard let currentMessage = messages.filter({$0.id == id}).first else { return }
+        guard let currentMessage = allMessages?.messages.filter({$0.id == id}).first else { return }
         appState.currentOptions =  choicesText.filter {
             currentMessage.nextMessagesId?.contains($0.id) ?? false
         }
         appState.send(message: currentMessage)
+        print("MENSAGEM: ", currentMessage.text)
+        if !currentMessage.isLastMessage {
+            loadCurrentMessage(currentMessage.nextMessagesId?.first ?? 0)
+        }
+
     }
     
     func parse(jsonData: Data) -> MessagesRecord? {
@@ -91,25 +101,20 @@ class MessagesInteractor: ObservableObject {
 
     func showAnswerOptions() {
         if !isAnswerEnabled {
-            
             loadCurrentMessage(appState.lastMessage?.id ?? 0)
-            //appState.currentOptions = choicesText
             isAnswerEnabled = true
         }
     }
 
     func sendMessage() {
         isAnswerEnabled = false
-        loadCurrentMessage(appState.selectedOption?.id ?? 0)
-        //appState.send(message: answer)
-        //getNextMessage()
+        getNextMessage()
     }
 
     func getNextMessage() {
-        if lastShowMessage < messages.count - 1 {
-            lastShowMessage += 1
-            appState.onScreenMessages.append(messages[lastShowMessage])
-        }
+        guard let nextMessage = allMessages?.messages.filter({ $0.id == appState.selectedOption?.id }).first else { return }
+        loadCurrentMessage(nextMessage.id)
+        loadCurrentMessage(nextMessage.nextMessagesId?.first ?? 0)
     }
     
     //Função para iniciar Choices e habilitar

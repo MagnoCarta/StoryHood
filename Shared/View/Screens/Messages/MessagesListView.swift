@@ -23,7 +23,7 @@ struct MessagesListView: View {
                 VStack {
                     ForEach(onScreenMessages, id: \.id) { message in
                         MessageBubble(messageType: message.type) {
-                            Text(message.text ?? "")
+                            Text(message.text)
                         }
                     }
                 }
