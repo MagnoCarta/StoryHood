@@ -36,56 +36,57 @@ struct ChatList: View {
 
     @State var selection: String = ""
     var a = [0,1,2,3]
-    @State var characters = [Character(name: .littleRedRidingHood, narrativeId: "littleRedRidingHood",isActive: true),Character(name: .littleRedRidingHood, narrativeId: "badWolf",isActive: false),Character(name: .littleRedRidingHood, narrativeId: "sendButton",isActive: false),Character(name: .littleRedRidingHood, narrativeId: "treesBg",isActive: false)
-    ]
+//    @State var characters = [Personage(name: .littleRedHood, narrativeId: "littleRedRidingHood", isActive: true),
+//                             Personage(name: .badWolf, narrativeId: "badWolf", isActive: false)]
+    @EnvironmentObject var interactor: MessagesInteractor
+    @EnvironmentObject var appState: MessageState
+    
     var body: some View {
         ScrollView {
             LazyVStack(alignment: .leading) {
-                ForEach(characters,id:\.self) { color in
+                ForEach(appState.characters, id: \.narrativeId) { color in
                     ZStack {
-                    Circle()
-                        .fill(Color.blue)
-                        .frame(width: 106, height: 107)
-                        .onTapGesture(perform: {
-                            selection = color.narrativeId!
+                        Circle()
+                            .fill(Color.blue)
+                            .onTapGesture(perform: {
+                                selection = color.narrativeId!
                             })
-                        .padding(10)
                         Image(color.narrativeId!)
                             .resizable()
-                            .frame(width:106,height: 107)
                             .clipShape(Circle())
                             .onTapGesture(perform: {
                                 selection = color.narrativeId!
-                                })
-                    if selection == color.narrativeId {
-                        //AQUI ENTRA NO CHAT ESPECIFICO
-                        Circle()
-                            .stroke(Color(color: selection), lineWidth: 8)
-                            .frame(width: 110, height: 110)
-
-                    }
-                        if color.isActive {
-                            Image("onlineIcon").frame(width:28,height: 28)
-                                .clipShape(Circle())
-                                .offset(x: 59, y: -40)
-                        } else {
-                            Image("offlineIcon").frame(width:28,height: 28)
-                                .clipShape(Circle())
-                                .offset(x: 59, y: -40)
+                            })
+                        if selection == color.narrativeId {
+                            //AQUI ENTRA NO CHAT ESPECIFICO
+                            Circle()
+                                .stroke(Color(color: selection), lineWidth: 8)
                         }
+                        if color.isActive {
+                            Image("onlineIcon").frame(width:16,height: 16)
+                                .clipShape(Circle())
+                                .offset(x: 50, y: -30)
+                        } else {
+                            Image("offlineIcon").frame(width:16,height: 16)
+                                .clipShape(Circle())
+                                .offset(x: 50, y: -30)
+                        }
+                    }
+                    .frame(width: 80, height: 80)
+                    .padding(.leading, 15)
+                    .padding(.top, 15)
                 }
             }
-            }
-
-        }
+        }.padding(.top, 30)
     }
-
 }
 
 struct ChatList_Previews: PreviewProvider {
     
     static var previews: some View {
-        ChatList()
+        NavigationView()
+            .environmentObject(MessagesInteractor())
+            .environmentObject(MessageState())
     }
 }
 

@@ -10,6 +10,7 @@ import SwiftUI
 struct MessagesTopBar: View {
 
     @Binding var isTyping: Bool
+    @EnvironmentObject var appState: MessageState
 
     var body: some View {
         ZStack {
@@ -21,8 +22,14 @@ struct MessagesTopBar: View {
             HStack {
                 Spacer()
                 HStack {
-                    Text(isTyping ? "Digitando..." : "Online")
-                        .foregroundColor(.gray)
+                    if appState.characters[0].isActive {
+                        Text(isTyping ? "Digitando..." : "Online")
+                            .foregroundColor(.gray)
+                    } else {
+                        Text("Offline")
+                            .foregroundColor(.gray)
+                    }
+
                     Image(GlobalImage.littleRedRidingHood.rawValue)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
