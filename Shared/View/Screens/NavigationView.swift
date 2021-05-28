@@ -17,9 +17,15 @@ struct NavigationView: View {
     let messageListView = MessageView()
     var body: some View {
         HStack{
+            #if os(iOS)
             chatList
                 .frame(width: 120, height: UIScreen.main.bounds.height)
             messageListView
+            #else
+            chatList
+                .frame(width: 120, height: .infinity)
+            messageListView
+            #endif
         }
         
     }

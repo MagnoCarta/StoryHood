@@ -91,7 +91,7 @@ struct ChatList_Previews: PreviewProvider {
 }
 
 
-fileprivate enum Multipliers {
-    static let height: CGFloat = UIScreen.main.bounds.height/1137
-    static let width: CGFloat = UIScreen.main.bounds.width/655
-}
+//fileprivate enum Multipliers {
+//    static let height: CGFloat = UIScreen.main.bounds.height/1137
+//    static let width: CGFloat = UIScreen.main.bounds.width/655
+//}
